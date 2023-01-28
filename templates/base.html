@@ -8,14 +8,28 @@
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <!-- SEO meta tags -->
+        <meta
+            name="description"
+            content="A cozy restaurant that uses only the freshest ingredients"
+        />
+        <meta
+            name="keywords"
+            content="restaurant, food, fresh ingredients, delicious, local produce"
+        />
     {% endblock %}
 
     {% block extra_meta %}
     {% endblock %}
 
     {% block corecss %}
+        <!-- Bootstrap  -->
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    {% endblock %}
+        <!-- Font Awesome  -->
+        <script src="https://kit.fontawesome.com/4aecc09291.js" crossorigin="anonymous"></script>
+        <!-- Custom Styles  -->
+        <link rel="stylesheet" href="{% static 'css/style.css' %}"> 
+      {% endblock %}
 
     {% block extra_css %}
     {% endblock %}
@@ -24,7 +38,7 @@
         <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-    {% endblock %}
+        {% endblock %}
 
     {% block extra_js %}
     {% endblock %}
@@ -32,8 +46,145 @@
     <title>Sliced Pizza - {% block extra_title %}{% endblock %}</title>
   </head>
   <body>
-    <header class="container-fluid fixed-top"></header>
-
+    <div class="container">
+      <div class="d-flex justify-content-evenly mt-3">
+          <div class="phone-number d-none d-md-flex align-items-center">
+              <p>Call us: 021-4545454</p>
+          </div>
+          <a class="navbar-brand" id="logo" href="{% url 'home' %}"
+              ><img
+                  src="{% static 'images/hungry-pizza-02.png' %}"
+                  alt="Delicious Pizza delivered to your door in a hurry"
+          /></a>
+          <div class="d-none d-md-flex align-items-center social-nav-icons">
+              <ul>
+                  <li>
+                      <a
+                          href="https://www.facebook.com"
+                          target="_blank"
+                          rel="noopener"
+                          aria-label="Visit our Facebook page (opens in a new tab)"
+                          ><i class="fa-brands fa-facebook facebook"></i
+                      ></a>
+                  </li>
+                  <li>
+                      <a
+                          href="https://www.twitter.com"
+                          target="_blank"
+                          rel="noopener"
+                          aria-label="Visit our Twitter page (opens in a new tab)"
+                          ><i class="fa-brands fa-twitter twitter"></i
+                      ></a>
+                  </li>
+                  <li>
+                      <a
+                          href="https://www.instagram.com"
+                          target="_blank"
+                          rel="noopener"
+                          aria-label="Visit our Instagram page (opens in a new tab)"
+                          ><i class="fa-brands fa-instagram instagram"></i
+                      ></a>
+                  </li>
+                  <li>
+                      <a
+                          href="https://www.youtube.com"
+                          target="_blank"
+                          rel="noopener"
+                          aria-label="Visit our YouTube page (opens in a new tab)"
+                          ><i class="fa-brands fa-youtube youtube"></i
+                      ></a>
+                  </li>
+              </ul>
+          </div>
+      </div>
+      <nav class="navbar navbar-expand-lg justify-content-center">
+          <div class="container-fluid">
+              <button
+                  class="navbar-toggler"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#navbarTogglerDemo02"
+                  aria-controls="navbarTogglerDemo02"
+                  aria-expanded="false"
+                  aria-label="Toggle navigation"
+              >
+                  <span class="navbar-toggler-icon"></span>
+              </button>
+              <div
+                  class="collapse navbar-collapse d-flex"
+                  id="navbarTogglerDemo02"
+              >
+                  <div class="p-2 flex-grow-1">
+                      <ul
+                          class="navbar-nav mb-2 mb-lg-0 justify-content-center align-items-md-center"
+                      >
+                          <li class="nav-item">
+                              <a
+                                  class="nav-link active"
+                                  aria-current="page"
+                                  href="#"
+                                  >About</a
+                              >
+                          </li>
+                          <li class="nav-item">
+                              <a class="nav-link" href="#">Menu</a>
+                          </li>
+                          <li class="nav-item">
+                              <a class="nav-link" href="#"
+                                  >Build your own</a
+                              >
+                          </li>
+                          <li class="nav-item">
+                              <a class="nav-link" href="#">Specials</a>
+                          </li>
+                          <li class="nav-item">
+                              <a class="nav-link" href="#">Feedback</a>
+                          </li>
+                          <li class="nav-item">
+                              <a class="nav-link" href="#">Contact</a>
+                          </li>
+                      </ul>
+                  </div>
+                  <ul class="list-inline list-unstyled text-center text-lg-right my-0">
+                    <li class="list-inline-item dropdown">
+                        <a class="text-black nav-link" href="#" id="user-options" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <div class="text-center">
+                                <div><i class="fas fa-user fa-lg"></i></div>
+                                <p class="my-0">My Account</p>
+                            </div>
+                        </a>
+                        <div class="dropdown-menu border-0" aria-labelledby="user-options">
+                            {% if request.user.is_authenticated %}
+                                {% if request.user.is_superuser %}
+                                <a href="#" class="dropdown-item">Product Management</a>
+                                {% endif %}
+                                <a href="#" class="dropdown-item">My Profile</a>
+                                <a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a>
+                            {% else %}
+                                <a href="{% url 'account_signup' %}" class="dropdown-item">Register</a>
+                                <a href="{% url 'account_login' %}" class="dropdown-item">Login</a>
+                            {% endif %}
+                        </div>
+                    </li>
+                    <li class="list-inline-item">
+                        <a class="{% if grand_total %}text-info font-weight-bold{% else %}text-black{% endif %} nav-link" href="#">
+                            <div class="text-center">
+                                <div><i class="fas fa-shopping-bag fa-lg"></i></div>
+                                <p class="my-0">
+                                    {% if grand_total %}
+                                        &euro;{{ grand_total|floatformat:2 }}
+                                    {% else %}
+                                        &euro;0.00
+                                    {% endif %}
+                                </p>
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+              </div>
+          </div>
+      </nav>
+  </div>
     {% if messages %}
         <div class="message-container"></div>
     {% endif %}
